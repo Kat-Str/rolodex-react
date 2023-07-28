@@ -24,9 +24,19 @@ class App extends Component {
       );
   }
 
+  onSearchChange = (event) => {
+    const searchField = event.target.value.toLocaleLowerCase();
+    this.setState(() => {
+      return { searchField };
+    });
+  };
+
   render() {
-    const filteredUsers = this.state.users.filter((user) => {
-      return user.name.toLocaleLowerCase().includes(this.state.searchField);
+    const { users, searchField } = this.state;
+    const { onSearchChange } = this;
+
+    const filteredUsers = users.filter((user) => {
+      return user.name.toLocaleLowerCase().includes(searchField);
     });
 
     return (
@@ -34,12 +44,7 @@ class App extends Component {
         <input
           type="search"
           placeholder="Search users"
-          onChange={(event) => {
-            const searchField = event.target.value.toLocaleLowerCase();
-            this.setState(() => {
-              return { searchField };
-            });
-          }}
+          onChange={onSearchChange}
         />
 
         {filteredUsers.map((user) => {
