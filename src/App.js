@@ -1,4 +1,5 @@
 import "./App.css";
+import Cardlist from "./components/card-list/card-list.component";
 import { Component } from "react";
 
 class App extends Component {
@@ -46,14 +47,7 @@ class App extends Component {
           placeholder="Search users"
           onChange={onSearchChange}
         />
-
-        {filteredUsers.map((user) => {
-          return (
-            <div key={user.id}>
-              <h2>{user.name}</h2>
-            </div>
-          );
-        })}
+        <Cardlist users={filteredUsers} />
       </div>
     );
   }
