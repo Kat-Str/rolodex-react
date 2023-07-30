@@ -5,11 +5,17 @@ class Cardlist extends Component {
     const { users } = this.props;
 
     return (
-      <div>
+      <div className="card-list">
         {users.map((user) => {
+          const { name, email, id } = user;
           return (
-            <div key={user.id}>
-              <h2>{user.name}</h2>
+            <div className="card-container" key={id}>
+              <img
+                alt={`user ${name}`}
+                src={`https://robohash.org/${id}?set=set5&size=180x180`}
+              />
+              <h2>{name}</h2>
+              <p>{email}</p>
             </div>
           );
         })}
