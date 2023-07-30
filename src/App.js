@@ -43,6 +43,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1 className="app-title">Rolodex App</h1>
         <SearchBox onChange={onSearchChange} />
         <Cardlist users={filteredUsers} />
       </div>

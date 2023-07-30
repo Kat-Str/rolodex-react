@@ -49,3 +49,11 @@ body {
   margin: 30px;
   border-radius: 4px;
 }
+
+.app-title {
+  margin-top: 55px;
+  margin-bottom: 10px;
+  font-size: 76px;
+  color: #0ccac4;
+  font-family: "Bigelow Rules";
+}
